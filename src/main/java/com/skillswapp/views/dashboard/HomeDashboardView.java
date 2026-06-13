@@ -14,7 +14,7 @@ import com.skillswapp.components.SwapperRow;
 
 public class HomeDashboardView extends VBox {
     private SceneManager sceneManager;
-    private TilePane cardsGrid;
+    private VBox cardsGrid;
     private List<SkillCard> allCards = new ArrayList<>();
 
     public HomeDashboardView(SceneManager sceneManager) {
@@ -48,16 +48,17 @@ public class HomeDashboardView extends VBox {
         showAllLink.setOnAction(e -> sceneManager.switchView("SearchResults"));
         skillsHeader.getChildren().addAll(skillsTitle, headerSpacer, showAllLink);
         
-        cardsGrid = new TilePane(20, 20);
-        cardsGrid.setPrefColumns(3);
+        cardsGrid = new VBox(10);
+        cardsGrid.setFillWidth(true);
         
         // Initialize all cards from DataStore
         for(com.skillswapp.core.DataStore.GlobalCourse gc : com.skillswapp.core.DataStore.getInstance().allAvailableCourses) {
             allCards.add(new SkillCard(gc.icon, gc.code, gc.title, gc.desc, gc.requests, gc.rating, gc.ownerName));
         }
         
-        // Add only the first 9 to the grid for the dashboard so it's not overwhelmed
-        cardsGrid.getChildren().addAll(allCards.subList(0, 9));
+        // Show first 8 cards as a clean vertical list
+        int limit = Math.min(8, allCards.size());
+        cardsGrid.getChildren().addAll(allCards.subList(0, limit));
         leftSide.getChildren().addAll(skillsHeader, cardsGrid);
         
         // Right Side: Communities and Swappers

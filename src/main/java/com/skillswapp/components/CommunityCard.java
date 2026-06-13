@@ -11,7 +11,7 @@ import javafx.scene.layout.Region;
 public class CommunityCard extends HBox {
     public CommunityCard(String emoji, String title, String subtitle) {
         this.getStyleClass().add("community-card");
-        this.setSpacing(15);
+        this.setSpacing(12);
         this.setAlignment(Pos.CENTER_LEFT);
         this.setStyle("-fx-cursor: hand;");
 
@@ -19,25 +19,23 @@ public class CommunityCard extends HBox {
         iconLabel.getStyleClass().add("community-icon");
         iconLabel.setMinWidth(Region.USE_PREF_SIZE);
 
-        VBox textBox = new VBox(5);
-        textBox.setMinWidth(Region.USE_PREF_SIZE);
+        VBox textBox = new VBox(4);
+        HBox.setHgrow(textBox, Priority.ALWAYS);
         
         Label titleLabel = new Label(title);
         titleLabel.getStyleClass().add("community-title");
         titleLabel.setWrapText(true);
-        titleLabel.setMaxWidth(150);
-        titleLabel.setMinWidth(Region.USE_PREF_SIZE);
+        // Remove max width restriction so full degree name is visible
+        titleLabel.setStyle("-fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #222;");
         
         Label subLabel = new Label(subtitle);
         subLabel.getStyleClass().add("community-subtitle");
-        subLabel.setMinWidth(Region.USE_PREF_SIZE);
+        subLabel.setStyle("-fx-font-size: 11px; -fx-text-fill: #666;");
         
         textBox.getChildren().addAll(titleLabel, subLabel);
 
-        Region spacer = new Region();
-        HBox.setHgrow(spacer, Priority.ALWAYS);
-
         Button joinBtn = new Button("Join");
+        joinBtn.setMinWidth(Region.USE_PREF_SIZE);
         joinBtn.setStyle("-fx-background-color: #008080; -fx-text-fill: white; -fx-font-size: 11px; -fx-padding: 5 12; -fx-background-radius: 5; -fx-cursor: hand;");
         joinBtn.setOnAction(e -> {
             joinBtn.setText("Joined ✓");
@@ -45,6 +43,6 @@ public class CommunityCard extends HBox {
             joinBtn.setStyle("-fx-background-color: #ccc; -fx-text-fill: #555; -fx-font-size: 11px; -fx-padding: 5 12; -fx-background-radius: 5;");
         });
 
-        this.getChildren().addAll(iconLabel, textBox, spacer, joinBtn);
+        this.getChildren().addAll(iconLabel, textBox, joinBtn);
     }
 }

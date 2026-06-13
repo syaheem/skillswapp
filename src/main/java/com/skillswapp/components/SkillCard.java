@@ -22,7 +22,7 @@ public class SkillCard extends VBox {
 
     public SkillCard(String iconEmoji, String title, String fullName, String description, int members, double rating, String ownerName) {
         this.courseCode = title;
-        this.ownerName = ownerName;
+        this.ownerName = (ownerName != null && !ownerName.isEmpty()) ? ownerName : "Unknown User";
         this.getStyleClass().add("skill-card");
         this.setSpacing(10);
 
@@ -57,8 +57,8 @@ public class SkillCard extends VBox {
         fullNameLabel.setWrapText(true);
         fullNameLabel.setMaxWidth(160);
         
-        Label ownerLabel = new Label("👤 Shared by: " + ownerName);
-        ownerLabel.setStyle("-fx-font-size: 11px; -fx-text-fill: #666; -fx-font-weight: bold; -fx-padding: 3 0 0 0;");
+        Label ownerLabel = new Label("\uD83D\uDC64 " + this.ownerName);
+        ownerLabel.setStyle("-fx-font-size: 11px; -fx-text-fill: #555; -fx-font-weight: bold; -fx-padding: 3 0 0 0;");
         
         titleBox.getChildren().addAll(titleLabel, fullNameLabel, ownerLabel);
         

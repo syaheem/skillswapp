@@ -62,21 +62,22 @@ public class HomeDashboardView extends VBox {
         
         // Right Side: Communities and Swappers
         VBox rightSide = new VBox(35);
-        rightSide.setMinWidth(320);
-        rightSide.setMaxWidth(320);
+        rightSide.setMinWidth(360);
+        rightSide.setMaxWidth(360);
         
-        VBox communitiesBox = new VBox(15);
+        VBox communitiesBox = new VBox(12);
         Label commTitle = new Label("🏛 Suggested Communities");
         commTitle.setStyle("-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #222;");
         communitiesBox.getChildren().addAll(
             commTitle,
-            new CommunityCard("💻", "Bachelor of Computer Science (BCS)", "128 members"),
-            new CommunityCard("📢", "Bachelor of Business Administration (BBA)", "85 members"),
-            new CommunityCard("🤖", "Bachelor of Information Technology (BIT)", "203 members"),
-            new CommunityCard("🎨", "Bachelor of Science in Architectural Studies (BARCH)", "67 members")
+            new CommunityCard("💻", "Bachelor of Computer Science (BCS)", "128 members • KICT"),
+            new CommunityCard("📊", "Bachelor of Business Administration (BBA)", "85 members • KENMS"),
+            new CommunityCard("🤖", "Bachelor of Information Technology (BIT)", "203 members • KICT"),
+            new CommunityCard("🎨", "Bachelor of Architecture (B.ARCH)", "67 members • KAED"),
+            new CommunityCard("⚙", "Bachelor of Engineering (B.ENG)", "156 members • KOE")
         );
         
-        VBox swappersBox = new VBox(15);
+        VBox swappersBox = new VBox(12);
         Label swapperTitle = new Label("⭐ Top Skill Swappers");
         swapperTitle.setStyle("-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #222;");
         swappersBox.getChildren().addAll(

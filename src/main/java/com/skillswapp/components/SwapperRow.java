@@ -15,15 +15,20 @@ public class SwapperRow extends HBox {
 
         Label avatarLabel = new Label(emoji);
         avatarLabel.getStyleClass().add("swapper-avatar");
+        avatarLabel.setMinWidth(Region.USE_PREF_SIZE);
 
         Label nameLabel = new Label(name);
         nameLabel.getStyleClass().add("swapper-name");
+        nameLabel.setMinWidth(Region.USE_PREF_SIZE);
+        nameLabel.setWrapText(true);
+        nameLabel.setMaxWidth(120);
 
         Region spacer = new Region();
         HBox.setHgrow(spacer, Priority.ALWAYS);
 
         Label ratingLabel = new Label("⭐ " + rating);
         ratingLabel.getStyleClass().add("swapper-rating");
+        ratingLabel.setMinWidth(Region.USE_PREF_SIZE);
 
         Button viewBtn = new Button("View");
         viewBtn.setStyle("-fx-background-color: #008080; -fx-text-fill: white; -fx-font-size: 11px; -fx-padding: 5 12; -fx-background-radius: 5; -fx-cursor: hand;");

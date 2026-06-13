@@ -17,13 +17,20 @@ public class CommunityCard extends HBox {
 
         Label iconLabel = new Label(emoji);
         iconLabel.getStyleClass().add("community-icon");
+        iconLabel.setMinWidth(Region.USE_PREF_SIZE);
 
         VBox textBox = new VBox(5);
+        textBox.setMinWidth(Region.USE_PREF_SIZE);
+        
         Label titleLabel = new Label(title);
         titleLabel.getStyleClass().add("community-title");
+        titleLabel.setWrapText(true);
+        titleLabel.setMaxWidth(150);
+        titleLabel.setMinWidth(Region.USE_PREF_SIZE);
         
         Label subLabel = new Label(subtitle);
         subLabel.getStyleClass().add("community-subtitle");
+        subLabel.setMinWidth(Region.USE_PREF_SIZE);
         
         textBox.getChildren().addAll(titleLabel, subLabel);
 

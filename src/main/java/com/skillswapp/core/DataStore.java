@@ -66,7 +66,7 @@ public class DataStore {
             this.icon = icon; this.code = code; this.title = title; this.desc = desc; this.requests = requests; this.rating = rating;
             this.ownerName = getRandomOwnerForCourse(code);
         }
-        private static String getRandomOwnerForCourse(String code) {
+        public static String getRandomOwnerForCourse(String code) {
             String[] owners = {"Syaheem (BCS)", "Fatimah (BBA)", "Ahmad Rafiq (MECH)", "Nurul Ain (BIT)", "Haziq (BARCH)", "Ahmad (LAW)"};
             int hash = Math.abs(code.hashCode());
             return owners[hash % owners.length];
@@ -217,7 +217,14 @@ public class DataStore {
                 DataStore loaded = gson.fromJson(reader, DataStore.class);
                 if (loaded != null) {
                     if (loaded.myCourses != null) this.myCourses = loaded.myCourses;
-                    if (loaded.allAvailableCourses != null && !loaded.allAvailableCourses.isEmpty()) this.allAvailableCourses = loaded.allAvailableCourses;
+                    if (loaded.allAvailableCourses != null && !loaded.allAvailableCourses.isEmpty()) {
+                        this.allAvailableCourses = loaded.allAvailableCourses;
+                        for (GlobalCourse gc : this.allAvailableCourses) {
+                            if (gc.ownerName == null || gc.ownerName.isEmpty()) {
+                                gc.ownerName = GlobalCourse.getRandomOwnerForCourse(gc.code);
+                            }
+                        }
+                    }
                     if (loaded.incomingRequests != null) this.incomingRequests = loaded.incomingRequests;
                     if (loaded.outgoingRequests != null) this.outgoingRequests = loaded.outgoingRequests;
                     if (loaded.tradeHistory != null) this.tradeHistory = loaded.tradeHistory;

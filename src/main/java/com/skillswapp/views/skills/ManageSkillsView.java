@@ -68,7 +68,7 @@ public class ManageSkillsView extends VBox {
     }
 
     private void addCourseCard(Course course) {
-        SkillCard card = new SkillCard(course.icon, course.code, course.fullName, course.desc, 0, 0);
+        SkillCard card = new SkillCard(course.icon, course.code, course.fullName, course.desc, 0, 0, "John Doe (BCS)");
         
         // Override SkillCard's default request button area with Edit/Delete buttons
         // To do this nicely without changing SkillCard too much, we remove the last child (Request Button)

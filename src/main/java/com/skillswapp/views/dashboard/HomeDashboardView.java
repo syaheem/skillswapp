@@ -53,7 +53,7 @@ public class HomeDashboardView extends VBox {
         
         // Initialize all cards from DataStore
         for(com.skillswapp.core.DataStore.GlobalCourse gc : com.skillswapp.core.DataStore.getInstance().allAvailableCourses) {
-            allCards.add(new SkillCard(gc.icon, gc.code, gc.title, gc.desc, gc.requests, gc.rating));
+            allCards.add(new SkillCard(gc.icon, gc.code, gc.title, gc.desc, gc.requests, gc.rating, gc.ownerName));
         }
         
         // Add only the first 9 to the grid for the dashboard so it's not overwhelmed
@@ -70,10 +70,10 @@ public class HomeDashboardView extends VBox {
         commTitle.setStyle("-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #222;");
         communitiesBox.getChildren().addAll(
             commTitle,
-            new CommunityCard("💻", "KICT Tech Innovators", "128 members"),
-            new CommunityCard("📢", "KENMS Marketing Hub", "85 members"),
-            new CommunityCard("🤖", "AI & Data Science Club", "203 members"),
-            new CommunityCard("🎨", "KAED Design Circle", "67 members")
+            new CommunityCard("💻", "Bachelor of Computer Science (BCS)", "128 members"),
+            new CommunityCard("📢", "Bachelor of Business Administration (BBA)", "85 members"),
+            new CommunityCard("🤖", "Bachelor of Information Technology (BIT)", "203 members"),
+            new CommunityCard("🎨", "Bachelor of Science in Architectural Studies (BARCH)", "67 members")
         );
         
         VBox swappersBox = new VBox(15);
@@ -81,11 +81,11 @@ public class HomeDashboardView extends VBox {
         swapperTitle.setStyle("-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #222;");
         swappersBox.getChildren().addAll(
             swapperTitle,
-            new SwapperRow("👨", "Syaheem", 4.8, () -> { com.skillswapp.core.DataStore.getInstance().currentViewingUser = "Syaheem"; sceneManager.switchView("OtherUserProfile"); }),
-            new SwapperRow("👩", "Fatimah", 4.7, () -> { com.skillswapp.core.DataStore.getInstance().currentViewingUser = "Fatimah"; sceneManager.switchView("OtherUserProfile"); }),
-            new SwapperRow("👨", "Ahmad Rafiq", 4.5, () -> { com.skillswapp.core.DataStore.getInstance().currentViewingUser = "Ahmad Rafiq"; sceneManager.switchView("OtherUserProfile"); }),
-            new SwapperRow("👩", "Nurul Ain", 4.9, () -> { com.skillswapp.core.DataStore.getInstance().currentViewingUser = "Nurul Ain"; sceneManager.switchView("OtherUserProfile"); }),
-            new SwapperRow("👨", "Haziq", 4.3, () -> { com.skillswapp.core.DataStore.getInstance().currentViewingUser = "Haziq"; sceneManager.switchView("OtherUserProfile"); })
+            new SwapperRow("👨", "Syaheem (BCS)", 4.8, () -> { com.skillswapp.core.DataStore.getInstance().currentViewingUser = "Syaheem (BCS)"; sceneManager.switchView("OtherUserProfile"); }),
+            new SwapperRow("👩", "Fatimah (BBA)", 4.7, () -> { com.skillswapp.core.DataStore.getInstance().currentViewingUser = "Fatimah (BBA)"; sceneManager.switchView("OtherUserProfile"); }),
+            new SwapperRow("👨", "Ahmad Rafiq (MECH)", 4.5, () -> { com.skillswapp.core.DataStore.getInstance().currentViewingUser = "Ahmad Rafiq (MECH)"; sceneManager.switchView("OtherUserProfile"); }),
+            new SwapperRow("👩", "Nurul Ain (BIT)", 4.9, () -> { com.skillswapp.core.DataStore.getInstance().currentViewingUser = "Nurul Ain (BIT)"; sceneManager.switchView("OtherUserProfile"); }),
+            new SwapperRow("👨", "Haziq (BARCH)", 4.3, () -> { com.skillswapp.core.DataStore.getInstance().currentViewingUser = "Haziq (BARCH)"; sceneManager.switchView("OtherUserProfile"); })
         );
         
         rightSide.getChildren().addAll(communitiesBox, swappersBox);

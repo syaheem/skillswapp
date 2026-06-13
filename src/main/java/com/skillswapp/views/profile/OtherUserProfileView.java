@@ -90,9 +90,9 @@ public class OtherUserProfileView extends VBox {
         TilePane skillsGrid = new TilePane(20, 20);
         skillsGrid.setPrefColumns(4);
         skillsGrid.getChildren().addAll(
-            new SkillCard("💻", "INFO 4402", "Mobile App Dev", "Mobile Application Development.", 20, 4.9),
-            new SkillCard("🌐", "INFO 3305", "Web Development", "Web Development using HTML, CSS.", 15, 4.7),
-            new SkillCard("🔒", "INFO 4303", "Info Security", "Information Security and Cryptography.", 8, 5.0)
+            new SkillCard("💻", "INFO 4402", "Mobile App Dev", "Mobile Application Development.", 20, 4.9, viewUser),
+            new SkillCard("🌐", "INFO 3305", "Web Development", "Web Development using HTML, CSS.", 15, 4.7, viewUser),
+            new SkillCard("🔒", "INFO 4303", "Info Security", "Information Security and Cryptography.", 8, 5.0, viewUser)
         );
         
         coursesSection.getChildren().addAll(skillsLabel, skillsGrid);

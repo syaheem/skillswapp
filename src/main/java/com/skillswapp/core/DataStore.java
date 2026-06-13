@@ -60,9 +60,16 @@ public class DataStore {
         public String desc;
         public int requests;
         public double rating;
+        public String ownerName;
         public GlobalCourse() {}
         public GlobalCourse(String icon, String code, String title, String desc, int requests, double rating) {
             this.icon = icon; this.code = code; this.title = title; this.desc = desc; this.requests = requests; this.rating = rating;
+            this.ownerName = getRandomOwnerForCourse(code);
+        }
+        private static String getRandomOwnerForCourse(String code) {
+            String[] owners = {"Syaheem (BCS)", "Fatimah (BBA)", "Ahmad Rafiq (MECH)", "Nurul Ain (BIT)", "Haziq (BARCH)", "Ahmad (LAW)"};
+            int hash = Math.abs(code.hashCode());
+            return owners[hash % owners.length];
         }
     }
 

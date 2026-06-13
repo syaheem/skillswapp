@@ -123,7 +123,7 @@ public class SearchResultsView extends VBox {
             int count = 0;
             for(DataStore.GlobalCourse gc : DataStore.getInstance().allAvailableCourses) {
                 if (count >= limit) break;
-                filteredCards.add(new SkillCard(gc.icon, gc.code, gc.title, gc.desc, gc.requests, gc.rating));
+                filteredCards.add(new SkillCard(gc.icon, gc.code, gc.title, gc.desc, gc.requests, gc.rating, gc.ownerName));
                 count++;
             }
         } else {
@@ -146,7 +146,7 @@ public class SearchResultsView extends VBox {
                 if (matchAikol && (cLower.startsWith("law"))) matchesKeyword = true;
 
                 if (matchesKeyword || gc.title.toLowerCase().contains(lowerQ) || gc.code.toLowerCase().contains(lowerQ) || gc.desc.toLowerCase().contains(lowerQ)) {
-                    filteredCards.add(new SkillCard(gc.icon, gc.code, gc.title, gc.desc, gc.requests, gc.rating));
+                    filteredCards.add(new SkillCard(gc.icon, gc.code, gc.title, gc.desc, gc.requests, gc.rating, gc.ownerName));
                 }
             }
         }

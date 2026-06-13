@@ -159,11 +159,11 @@ The file is automatically created on first run and updated whenever you make cha
 
 ---
 
-## 👨‍💻 Developer
+## 👥 Development Team
 
-**Syaheem**  
-Bachelor of Computer Science (BCS)  
-Kulliyyah of Information and Communication Technology (KICT)  
+This project was developed as a **group project** by students of:
+
+**Kulliyyah of Information and Communication Technology (KICT)**  
 International Islamic University Malaysia (IIUM)
 
 ---

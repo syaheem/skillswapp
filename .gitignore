@@ -1,0 +1,7 @@
+/target/
+/.gradle/
+/build/
+/datastore.json
+/user_avatar.png
+*.class
+*.log

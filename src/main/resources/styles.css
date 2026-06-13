@@ -1,0 +1,164 @@
+.sidebar {
+    -fx-background-color: #e2f4ee;
+    -fx-padding: 20 10;
+}
+.sidebar .button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #333;
+    -fx-font-size: 13px;
+    -fx-cursor: hand;
+    -fx-padding: 10 15;
+    -fx-alignment: center-left;
+    -fx-background-radius: 8;
+}
+.sidebar .button:hover {
+    -fx-background-color: #c9e8df;
+    -fx-background-radius: 8;
+}
+.logo {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #008080;
+    -fx-padding: 0 0 20 0;
+}
+
+.dashboard {
+    -fx-background-color: #eaf5f2;
+}
+.search-field {
+    -fx-background-color: white;
+    -fx-background-radius: 20;
+    -fx-padding: 10 20;
+    -fx-pref-width: 400px;
+    -fx-border-color: #ddd;
+    -fx-border-radius: 20;
+}
+.filter-btn {
+    -fx-background-color: white;
+    -fx-background-radius: 20;
+    -fx-padding: 10 20;
+    -fx-border-color: #ddd;
+    -fx-border-radius: 20;
+    -fx-cursor: hand;
+}
+.filter-btn:hover {
+    -fx-background-color: #f0f0f0;
+}
+.tag-btn {
+    -fx-background-color: transparent;
+    -fx-border-color: #ccc;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-padding: 5 15;
+    -fx-text-fill: #555;
+    -fx-cursor: hand;
+}
+.tag-btn:hover {
+    -fx-background-color: #e0e0e0;
+}
+.tag-active {
+    -fx-background-color: #005a5a;
+    -fx-text-fill: white;
+    -fx-border-color: #005a5a;
+}
+.profile-icon, .bell-icon {
+    -fx-font-size: 20px;
+    -fx-background-color: white;
+    -fx-background-radius: 50;
+    -fx-padding: 5 10;
+    -fx-cursor: hand;
+}
+.profile-icon:hover, .bell-icon:hover {
+    -fx-background-color: #e0e0e0;
+}
+
+/* Cards */
+.skill-card {
+    -fx-background-color: white;
+    -fx-background-radius: 15;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 5);
+    -fx-min-width: 250px;
+    -fx-max-width: 280px;
+}
+.skill-card:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,128,128,0.15), 15, 0, 0, 5);
+}
+.card-icon {
+    -fx-font-size: 24px;
+    -fx-background-color: #f0f7f4;
+    -fx-padding: 10;
+    -fx-background-radius: 10;
+}
+.card-title {
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+.card-desc {
+    -fx-text-fill: #777;
+    -fx-font-size: 12px;
+}
+.card-stats {
+    -fx-text-fill: #555;
+    -fx-font-size: 11px;
+}
+.card-rating {
+    -fx-text-fill: #f5a623;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+.request-btn {
+    -fx-background-color: #008080;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10;
+    -fx-background-radius: 10;
+    -fx-cursor: hand;
+}
+.request-btn:hover {
+    -fx-background-color: #006666;
+}
+.community-card {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-padding: 15;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 2);
+}
+.community-card:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,128,128,0.1), 12, 0, 0, 3);
+}
+.community-icon {
+    -fx-font-size: 20px;
+    -fx-background-color: #f0f7f4;
+    -fx-padding: 10;
+    -fx-background-radius: 10;
+}
+.community-title {
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+}
+.community-subtitle {
+    -fx-text-fill: #777;
+    -fx-font-size: 11px;
+}
+.swapper-row {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-padding: 10 15;
+}
+.swapper-row:hover {
+    -fx-background-color: #f9f9f9;
+}
+.swapper-avatar {
+    -fx-font-size: 20px;
+    -fx-background-color: #e0e0e0;
+    -fx-background-radius: 50;
+    -fx-padding: 5 10;
+}
+.swapper-name {
+    -fx-font-size: 13px;
+}
+.swapper-rating {
+    -fx-text-fill: #f5a623;
+    -fx-font-size: 12px;
+}
